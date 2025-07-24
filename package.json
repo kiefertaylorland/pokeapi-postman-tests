@@ -1,0 +1,15 @@
+{
+  "name": "pokeapi-postman-tests",
+  "version": "1.0.0",
+  "description": "Comprehensive API test suite for PokeAPI using Postman and Newman",
+  "scripts": {
+    "install-deps": "npm install newman newman-reporter-htmlextra",
+    "test": "newman run collections/pokemon-api-tests.postman_collection.json -e collections/pokemon-environments.postman_environment.json --reporters cli,htmlextra --reporter-htmlextra-export reports/test-report.html",
+    "test:verbose": "newman run collections/pokemon-api-tests.postman_collection.json -e collections/pokemon-environments.postman_environment.json --reporters cli,htmlextra --reporter-htmlextra-export reports/test-report.html --verbose",
+    "test:ci": "newman run collections/pokemon-api-tests.postman_collection.json -e collections/pokemon-environments.postman_environment.json --reporters cli,junit --reporter-junit-export reports/junit.xml"
+  },
+  "devDependencies": {
+    "newman": "^6.0.0",
+    "newman-reporter-htmlextra": "^1.23.0"
+  }
+}
