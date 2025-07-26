@@ -9,7 +9,7 @@
     "test:ci": "newman run collections/pokemon-api-tests.postman_collection.json -e collections/pokemon-environments.postman_environment.json --reporters cli,junit --reporter-junit-export reports/junit.xml"
   },
   "devDependencies": {
-    "newman": "^6.0.0",
-    "newman-reporter-htmlextra": "^1.23.0"
+    "newman": "^6.2.1",
+    "newman-reporter-htmlextra": "^1.23.1"
   }
 }
