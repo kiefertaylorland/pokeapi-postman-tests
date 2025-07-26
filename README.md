@@ -2,7 +2,6 @@
 
 A comprehensive, production-ready API test suite for the [PokeAPI](https://pokeapi.co/) built with **Postman** and **Newman**. This project demonstrates professional QA engineering practices through systematic testing of REST API endpoints.
 
-[![API Tests](https://github.com/yourusername/pokeapi-postman-tests/workflows/Pokemon%20API%20Tests/badge.svg)](https://github.com/yourusername/pokeapi-postman-tests/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 🎯 Project Overview
