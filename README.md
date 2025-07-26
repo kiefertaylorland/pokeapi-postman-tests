@@ -51,9 +51,6 @@ open reports/test-report.html
 # Verbose output with detailed logs
 npm run test:verbose
 
-# Data-driven testing with CSV file
-npm run test:data
-
 # CI-friendly JUnit output
 npm run test:ci
 ```
@@ -81,9 +78,6 @@ pokeapi-postman-tests/
 ├── collections/
 │   ├── pokemon-api-tests.postman_collection.json     # Main test collection
 │   └── pokemon-environments.postman_environment.json # Environment variables
-├── data/
-│   ├── pokemon-test-data.csv                         # Test data for data-driven tests
-│   └── expected-schemas.json                         # Schema validation templates
 ├── reports/
 │   ├── test-report.html                             # Generated HTML report
 │   └── junit.xml                                    # CI-friendly test results
@@ -107,36 +101,6 @@ The test suite uses environment variables for flexibility across different testi
 | `base_url` | `https://pokeapi.co/api/v2` | API base endpoint |
 | `response_time_threshold` | `500` | Maximum response time (ms) |
 | `random_pokemon_id` | `25` | Default Pokemon for chaining tests |
-
-### Test Data Configuration
-
-The `data/pokemon-test-data.csv` file enables data-driven testing:
-
-```csv
-pokemon_id,pokemon_name,expected_type,expected_height,description
-1,bulbasaur,grass,7,First Pokemon in Pokedex
-25,pikachu,electric,4,Electric mouse Pokemon
-150,mewtwo,psychic,20,Legendary psychic Pokemon
-```
-
-## 🤖 Continuous Integration
-
-### GitHub Actions Workflow
-
-The project includes a complete CI/CD pipeline that:
-
-- **Triggers**: On push, pull requests, and weekly schedule
-- **Environment**: Ubuntu with Node.js 18
-- **Execution**: Runs full test suite with JUnit reporting
-- **Artifacts**: Uploads test results for analysis
-- **Notifications**: Provides immediate feedback on test failures
-
-### Local CI Simulation
-
-```bash
-# Simulate the CI environment locally
-docker run -v $(pwd):/workspace -w /workspace node:18 npm run test:ci
-```
 
 ## 📈 Sample Test Results
 
@@ -172,7 +136,6 @@ This project demonstrates mastery of:
 
 - **API Testing Fundamentals**: HTTP methods, status codes, response validation
 - **Test Automation**: Collection design, environment management, CI integration
-- **Data-Driven Testing**: CSV integration, parameterized test execution
 - **Performance Testing**: Response time monitoring, threshold validation
 - **Schema Validation**: JSON structure verification, data type checking
 
