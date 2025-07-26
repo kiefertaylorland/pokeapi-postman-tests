@@ -41,32 +41,52 @@ jobs:
         
     - name: 🧪 Run Standard API Tests
       if: matrix.test-type == 'standard'
+      env:
+        CI: true
+        NODE_ENV: ci
       run: |
-        echo "🚀 Running standard Pokemon API tests..."
-        npm run test:ci
+        echo "🚀 Running standard Pokemon API tests in CI mode..."
+        newman run collections/pokemon-api-tests.postman_collection.json \
+          -e collections/pokemon-environments.postman_environment.json \
+          --reporters cli,junit \
+          --reporter-junit-export reports/junit.xml \
+          --global-var "CI=true" \
+          --global-var "response_time_threshold=2000" \
+          --bail
         
     - name: 📊 Run Data-Driven Tests
       if: matrix.test-type == 'data-driven'
+      env:
+        CI: true
+        NODE_ENV: ci
       run: |
-        echo "🚀 Running data-driven Pokemon API tests..."
+        echo "🚀 Running data-driven Pokemon API tests in CI mode..."
         newman run collections/pokemon-api-tests.postman_collection.json \
           -e collections/pokemon-environments.postman_environment.json \
           -d data/pokemon-test-data.csv \
           --reporters cli,junit \
           --reporter-junit-export reports/junit-datadriven.xml \
+          --global-var "CI=true" \
+          --global-var "response_time_threshold=2000" \
+          --timeout 10000 \
           --bail
           
     - name: 📄 Generate HTML Report
       if: always()
+      env:
+        CI: true
       run: |
-        echo "📊 Generating comprehensive HTML report..."
+        echo "📊 Generating comprehensive HTML report for CI..."
         newman run collections/pokemon-api-tests.postman_collection.json \
           -e collections/pokemon-environments.postman_environment.json \
           --reporters htmlextra \
           --reporter-htmlextra-export reports/pokemon-api-report.html \
-          --reporter-htmlextra-title "Pokemon API Test Results" \
+          --reporter-htmlextra-title "Pokemon API Test Results (CI)" \
           --reporter-htmlextra-titleSize 4 \
-          --reporter-htmlextra-logs
+          --reporter-htmlextra-logs \
+          --global-var "CI=true" \
+          --global-var "response_time_threshold=2000" \
+          --timeout 10000
         
     - name: 📊 Upload Test Results
       uses: actions/upload-artifact@v4
