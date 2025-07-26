@@ -147,13 +147,6 @@ This project demonstrates mastery of:
 - **Documentation**: Clear setup instructions, comprehensive project documentation
 - **Version Control**: Proper Git practices, collaborative development
 
-### DevOps Integration
-
-- **CI/CD Pipelines**: GitHub Actions, automated test execution
-- **Environment Management**: Multiple environment support, configuration management
-- **Test Reporting**: JUnit integration, artifact management
-- **Monitoring**: Scheduled test runs, failure notifications
-
 ## 🤝 Contributing
 
 1. Fork the repository
@@ -164,7 +157,7 @@ This project demonstrates mastery of:
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) file for details.
 
 ## 🙏 Acknowledgments
 
