@@ -23,6 +23,13 @@ Each endpoint includes four essential test categories:
 
 ## 📸 Screenshots
 
+![Screenshot 2025-07-26 at 5 08 53 PM](https://github.com/user-attachments/assets/1c6f4572-13c0-4daf-ac71-fcef72bbf926)
+![Screenshot 2025-07-26 at 5 09 04 PM](https://github.com/user-attachments/assets/878395c8-6d3c-4e38-ab5e-83190e4b672c)
+![Screenshot 2025-07-26 at 5 08 24 PM](https://github.com/user-attachments/assets/cfb0b86d-d315-471c-9343-a5b789e14de3)
+![Screenshot 2025-07-26 at 5 05 10 PM](https://github.com/user-attachments/assets/e2c7ad36-5899-4360-8459-5d26d982bbea)
+![Screenshot 2025-07-26 at 5 07 36 PM](https://github.com/user-attachments/assets/67e957eb-8e4d-4b38-8cfc-a3da136ca00f)
+
+
 ## 🚀 Quick Start
 
 ### Prerequisites
