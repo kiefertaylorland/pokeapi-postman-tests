@@ -55,22 +55,6 @@ npm run test:verbose
 npm run test:ci
 ```
 
-## 📊 Test Coverage
-
-### Core Test Scenarios (12 focused tests)
-
-| Endpoint | Happy Path | Edge Cases | Negative Tests | Schema Validation |
-|----------|------------|------------|----------------|-------------------|
-| `/pokemon/{id}` | ✅ Pikachu (id=25) | ✅ First Pokemon (id=1) | ✅ Invalid ID (99999) | ✅ Full schema check |
-| `/pokemon?limit=X` | ✅ 20 Pokemon list | ✅ Single Pokemon (limit=1) | ✅ Invalid limit (-1) | ✅ List structure |
-| `/type/{id}` | ✅ Electric type | ✅ Pikachu→Electric chain | ✅ Invalid type ID | ✅ Type schema |
-
-### Performance Testing
-
-- **Response Time Thresholds**: All requests must complete under 500ms
-- **Reliability Checks**: Network error handling and retry logic
-- **Data Validation**: Cross-reference checks between related endpoints
-
 ## 🏗️ Project Structure
 
 ```markdown
@@ -84,48 +68,8 @@ pokeapi-postman-tests/
 ├── scripts/
 │   ├── run-tests.sh                                 # Bash execution script
 │   └── generate-report.js                           # Custom report generator
-├── .github/workflows/
-│   └── api-tests.yml                                # GitHub Actions CI pipeline
 ├── package.json                                     # Dependencies and scripts
 └── README.md                                        # This file
-```
-
-## 🔧 Configuration
-
-### Environment Variables
-
-The test suite uses environment variables for flexibility across different testing scenarios:
-
-| Variable | Default | Purpose |
-|----------|---------|---------|
-| `base_url` | `https://pokeapi.co/api/v2` | API base endpoint |
-| `response_time_threshold` | `500` | Maximum response time (ms) |
-| `random_pokemon_id` | `25` | Default Pokemon for chaining tests |
-
-## 📈 Sample Test Results
-
-### Successful Test Run Output
-
-```markdown
-┌─────────────────────────┬──────────────────┬──────────────────┐
-│                         │         executed │           failed │
-├─────────────────────────┼──────────────────┼──────────────────┤
-│              iterations │                1 │                0 │
-├─────────────────────────┼──────────────────┼──────────────────┤
-│                requests │               12 │                0 │
-├─────────────────────────┼──────────────────┼──────────────────┤
-│            test-scripts │               12 │                0 │
-├─────────────────────────┼──────────────────┼──────────────────┤
-│      prerequest-scripts │                8 │                0 │
-├─────────────────────────┼──────────────────┼──────────────────┤
-│              assertions │               45 │                0 │
-├─────────────────────────┼──────────────────┼──────────────────┤
-│ total run duration: 2.1s                                      │
-├─────────────────────────┼──────────────────┼──────────────────┤
-│ total data received: 15.2kB (approx)                          │
-├─────────────────────────┼──────────────────┼──────────────────┤
-│ average response time: 180ms [min: 95ms, max: 312ms, s.d.: 67ms] │
-└─────────────────────────┴──────────────────┴──────────────────┘
 ```
 
 ## 🎓 Learning Outcomes
