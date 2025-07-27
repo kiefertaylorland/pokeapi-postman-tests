@@ -21,6 +21,8 @@ Each endpoint includes four essential test categories:
 3. **❌ Negative Tests** - Invalid inputs and error handling
 4. **📋 Schema Validation** - Response structure verification
 
+## 📸 Screenshots
+
 ## 🚀 Quick Start
 
 ### Prerequisites
